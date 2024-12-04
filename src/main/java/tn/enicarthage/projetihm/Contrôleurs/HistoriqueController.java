@@ -8,6 +8,7 @@ import tn.enicarthage.projetihm.Entity.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/historique")
 public class HistoriqueController {
 
@@ -18,7 +19,7 @@ public class HistoriqueController {
     public ResponseEntity<Historique> enregistrerPriseOuRate(
             @PathVariable Long personneId,
             @PathVariable Long medicamentId,
-            @RequestParam boolean pris) {
+            @RequestParam(name = "pris") boolean pris) {
         Historique historique = historiqueService.marquerPriseOuRate(personneId, medicamentId, pris);
         return ResponseEntity.ok(historique);
     }

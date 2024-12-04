@@ -28,6 +28,7 @@ public class HistoriqueService {
                 .orElseThrow(() -> new RuntimeException("Personne introuvable"));
         Medicament medicament = medicamentRepository.findById(medicamentId)
                 .orElseThrow(() -> new RuntimeException("Médicament introuvable"));
+        medicament.setPrise(true);
 
         Historique historique = new Historique(personne, medicament, LocalDateTime.now(), pris);
         return historiqueRepository.save(historique);

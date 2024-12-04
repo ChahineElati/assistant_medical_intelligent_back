@@ -18,13 +18,14 @@ public class Medicament {
     private String nom;
     private String posologie; // Exemple : "2 comprimés par jour"
     private LocalDateTime heurePrise; // Heure prévue de la prise
+    private boolean prise;
 
     // Many-to-One relation with Personne
     @ManyToOne
     @JoinColumn(name = "personne_id")
     private Personne personne;
 
-    // Constructeurs, getters, setters, etc.
+	// Constructeurs, getters, setters, etc.
     public Medicament() {}
 
     public Medicament(String nom, String posologie, LocalDateTime heurePrise, Personne personne) {
@@ -74,7 +75,13 @@ public class Medicament {
 		this.nom = nom;
 	}
 
+	public boolean isPrise() {
+		return prise;
+	}
 
+	public void setPrise(boolean prise) {
+		this.prise = prise;
+	}
 
 }
 

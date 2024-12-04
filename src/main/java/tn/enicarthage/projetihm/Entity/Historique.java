@@ -5,6 +5,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.*;
 import org.springframework.stereotype.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -40,5 +42,46 @@ public class Historique {
         this.pris = pris;
     }
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Personne getPersonne() {
+		return personne;
+	}
+
+	public void setPersonne(Personne personne) {
+		this.personne = personne;
+	}
+
+	public Medicament getMedicament() {
+		return medicament;
+	}
+
+	public void setMedicament(Medicament medicament) {
+		this.medicament = medicament;
+	}
+
+	public LocalDateTime getDatePrise() {
+		return datePrise;
+	}
+
+	public void setDatePrise(LocalDateTime datePrise) {
+		this.datePrise = datePrise;
+	}
+
+	public boolean isPris() {
+		return pris;
+	}
+
+	public void setPris(boolean pris) {
+		this.pris = pris;
+	}
+
     // Getters et setters...
+    
 }
