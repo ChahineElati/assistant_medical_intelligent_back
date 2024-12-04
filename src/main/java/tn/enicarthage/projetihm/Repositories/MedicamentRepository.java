@@ -16,7 +16,8 @@ public interface MedicamentRepository extends JpaRepository<Medicament, Long> {
     List<Medicament> findByPersonne(Personne personne);
 
     // Méthode pour récupérer la liste des médicaments d'une personne par son ID
-    List<Medicament> findByPersonneId(Long personneId);
+    
+    List<Medicament> findByPersonneIdOrderByHeurePriseAsc(Long personneId);
 
     // Médicaments à prendre dans les prochaines minutes
     @Query("SELECT m FROM Medicament m WHERE m.personne.id = :personneId AND m.heurePrise BETWEEN :now AND :nextTime")

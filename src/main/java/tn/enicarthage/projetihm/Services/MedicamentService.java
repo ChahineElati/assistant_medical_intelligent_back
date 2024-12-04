@@ -65,6 +65,6 @@ public class MedicamentService {
         }
 
         // Récupérer la liste des médicaments pour cette personne
-        return medicamentRepository.findByPersonneId(personneId);
+        return medicamentRepository.findByPersonneIdOrderByHeurePriseAsc(personneId);
     }
 }
